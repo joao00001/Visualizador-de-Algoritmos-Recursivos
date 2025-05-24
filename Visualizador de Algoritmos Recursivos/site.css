@@ -1,0 +1,532 @@
+/* Estilos Globais e Variáveis de Tema "Swish" */
+:root {
+    --swish-font-heading: 'Poppins', sans-serif;
+    --swish-font-body: 'Roboto', sans-serif;
+    --swish-font-code: 'Fira Code', monospace;
+
+    --swish-grad-start: #F0F2FF;
+    --swish-grad-end: #FAFBFF;
+
+    --swish-purple-dark: #5400D8;
+    --swish-purple-mid: #7D3CFF;
+    --swish-yellow-accent: #FDE047;
+    --swish-green-accent: #34D399;
+    --swish-blue-accent: #3B82F6;
+    --swish-red-accent: #EF4444;
+    --swish-orange-accent: #F97316;
+
+    --swish-text-dark: #1F2937;
+    --swish-text-light: #FFFFFF;
+    --swish-text-subtle: #c0c0c0;
+
+    --swish-bg-card: #FFFFFF;
+    --swish-border: transparent;
+    --swish-border-focus: var(--swish-purple-mid);
+    --swish-shadow: 0 8px 24px rgba(22, 28, 45, 0.06);
+    --swish-shadow-strong: 0 12px 32px rgba(22, 28, 45, 0.1);
+
+    --swish-code-bg: #1E2029;
+    --swish-code-text: #D1D5DB;
+    --swish-code-highlight-bg: rgba(125, 60, 255, 0.1);
+    --swish-code-highlight-border: var(--swish-purple-mid);
+}
+
+/* Reset Básico e Configurações Globais */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--swish-font-body);
+    line-height: 1.7;
+    background: linear-gradient(135deg, #212121 0%, #272727 100%);
+    color: var(--swish-text-dark);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-size: 16px;
+    color: #a8a8a8;
+}
+
+/* Header */
+header {
+    background: linear-gradient(135deg, #2d2d2d 0%, #222222 100%);
+    color: var(--swish-text-dark);
+    padding: 1.25rem 0;
+    text-align: center;
+    border-bottom: 1px solid var(--swish-border);
+}
+
+header h1 {
+    margin: 0;
+    font-family: var(--swish-font-heading);
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--swish-purple-dark);
+}
+
+/* Main Content Area */
+main {
+    flex: 1;
+    max-width: 1300px;
+    width: 90%;
+    margin: 2.5rem auto;
+    padding: 0;
+    background-color: transparent;
+    box-shadow: none;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+section {
+    margin-bottom: 0;
+    padding: 1.875rem;
+    background-color: #303030;
+    border: 1px solid var(--swish-border);
+    border-radius: 16px;
+    box-shadow: var(--swish-shadow);
+}
+
+h2, h3 {
+    font-family: var(--swish-font-heading);
+    color: var(--swish-purple-dark);
+    border-bottom: none;
+    padding-bottom: 0;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+h2 { font-size: 1.75rem; }
+h3 { font-size: 1.375rem; }
+
+/*
+--------------------------------------------------------------------
+Ajustes Específicos para Controles de Configuração
+--------------------------------------------------------------------
+Coloque estas regras após as regras gerais de .control-group no seu CSS,
+ou modifique as regras existentes se preferir.
+*/
+
+/* Estilização para o select#algorithm-select */
+select#algorithm-select {
+    /* Remove a aparência padrão do navegador */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
+    /* Adiciona uma seta personalizada (SVG Chevron Down) */
+    /* Cor da seta é --swish-text-subtle (#6B7280) */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='%236B7280'%3E%3Cpath fill-rule='evenodd' d='M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z' clip-rule='evenodd' /%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.875rem center; /* Posição da seta (padding-right do select - largura da seta) */
+    background-size: 1.25em; /* Tamanho da seta */
+
+    /* Garante que o padding à direita seja suficiente para não sobrepor o texto com a seta */
+    padding-right: 2.5rem; /* Ajuste conforme necessário (ex: 1rem de padding + 1.5rem para a seta) */
+
+    /* Herda outros estilos de .control-group select (como width, padding-left, border, etc.) */
+    /* Se esta regra não estiver sobrescrevendo uma mais geral, copie os estilos de
+       .control-group select que você quer manter: */
+    width: 100%;
+    padding-top: 0.875rem;
+    padding-bottom: 0.875rem;
+    padding-left: 1rem;
+    border: 1px solid var(--swish-border);
+    border-radius: 10px;
+    box-sizing: border-box;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    font-family: var(--swish-font-body);
+    font-size: 1rem;
+    background-color: #F9FAFB; /* Cor de fundo padrão para inputs */
+    color: var(--swish-text-dark);
+    cursor: pointer;
+}
+
+/* Estado de foco para o select (mantém consistência com outros inputs) */
+select#algorithm-select:focus {
+    border-color: var(--swish-border-focus);
+    box-shadow: 0 0 0 3px rgba(125, 60, 255, 0.15);
+    outline: none;
+    background-color: var(--swish-bg-card);
+}
+
+/* Estilização para o div#algorithm-input-group (se precisar de algo específico além de .control-group) */
+/* No momento, .control-group já define a margem inferior.
+   Se precisar de mais espaçamento ou algo único para este grupo: */
+/*
+div#algorithm-input-group {
+    margin-bottom: 1.5rem; // Exemplo: um pouco mais de margem
+}
+*/
+
+/* Estilização para a dica de input small#input-hint dentro do #algorithm-input-group */
+div#algorithm-input-group small#input-hint {
+    display: block; /* Para ocupar a própria linha */
+    margin-top: 0.625rem; /* Espaçamento acima da dica (10px) */
+    font-size: 0.8125rem; /* Tamanho de fonte menor (13px) */
+    color: var(--swish-text-subtle);
+    line-height: 1.5; /* Melhor legibilidade */
+}
+
+/* Ajuste para o input de texto dentro do algorithm-input-group,
+   se ele já não estiver coberto pela regra .control-group input[type="text"] */
+div#algorithm-input-group input#algorithm-input {
+    width: 100%;
+    padding: 0.875rem 1rem;
+    border: 1px solid var(--swish-border);
+    border-radius: 10px;
+    box-sizing: border-box;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    font-family: var(--swish-font-body);
+    font-size: 1rem;
+    background-color: #F9FAFB; /* Cor de fundo padrão para inputs */
+    color: var(--swish-text-dark);
+}
+
+button#visualize-btn {
+    background-color: var(--swish-yellow-accent);
+    color: var(--swish-text-dark);
+    padding: 0.875rem 1.875rem;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    font-family: var(--swish-font-heading);
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    box-shadow: 0 4px 12px rgba(252, 224, 0, 0.2);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+button#visualize-btn:hover {
+    background-color: #FBCB0A;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(252, 224, 0, 0.3);
+}
+button#visualize-btn:active {
+    transform: translateY(0px);
+}
+button#visualize-btn:disabled {
+    background-color: #D1D5DB;
+    color: var(--swish-text-subtle);
+    cursor: not-allowed;
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+/* Seção de Visualização Principal (Explanation & Callstack) */
+#visualization-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1.875rem;
+    padding: 0;
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+}
+
+.column {
+    min-width: 0;
+    background-color: #303030;
+    padding: 1.5rem;
+    border: 1px solid #303030;
+    border-radius: 25px;
+    box-shadow: var(--swish-shadow);
+    display: flex;
+    flex-direction: column;
+}
+
+/* Área de Código Completo na Página */
+#full-code-display-section {
+    background-color: #303030;
+    color: var(--swish-code-text);
+    padding: 1.875rem;
+    border-radius: 16px;
+    box-shadow: var(--swish-shadow-strong);
+    border: none;
+}
+
+#full-code-display-section h3 {
+    color: var(--swish-text-light);
+    font-family: var(--swish-font-heading);
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+    justify-self: center;
+}
+#full-code-display-section h3 span {
+    color: var(--swish-yellow-accent);
+    font-weight: 600;
+}
+
+#page-code-display-wrapper {
+    display: flex;
+    background-color: transparent;
+    border: 1px solid #373A48;
+    border-radius: 10px;
+    max-height:132;
+    overflow: hidden;
+    background-color: #232323;
+}
+
+#page-line-numbers {
+    padding: 1rem;
+    background-color: #a8a8a8;
+    text-align: right;
+    color: #33363f;
+    user-select: none;
+    font-family: var(--swish-font-code);
+    font-size: 0.875rem;
+    line-height: 1.7;
+    border-right: 1px solid #373A48;
+    overflow-y: hidden;
+    width: 4rem;
+}
+
+#page-code-display {
+    flex-grow: 1;
+    padding: 1rem;
+    font-family: var(--swish-font-code);
+    font-size: 0.9375rem;
+    white-space: pre;
+    line-height: 1.7;
+    overflow: auto;
+    color: var(--swish-code-text);
+}
+
+#page-code-display .highlight-line {
+    background-color: var(--swish-code-highlight-bg);
+    display: block;
+    margin-left: -1rem;
+    margin-right: -1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    border-left: 3px solid var(--swish-code-highlight-border);
+}
+
+/* Classes de Token para Syntax Highlighting */
+.token.keyword { color: #C778DD; font-weight: normal; }
+.token.comment { color: #7F848E; font-style: italic; }
+.token.number { color: #D19A66; }
+.token.string { color: #98C379; }
+.token.operator { color: #61AFEF; }
+.token.punctuation { color: #ABB2BF; }
+.token.function-name { color: #61AFEF; }
+.token.parameter { color: #E06C75; }
+
+/* Área de Explicação (Passo a Passo) */
+#explanation-area h3, #callstack-area h3 {
+    color: #a8a8a8;
+    align-self: center;
+}
+
+#steps-log {
+    flex-grow: 1;
+    min-height: 250px;
+    max-height: 450px;
+    overflow-y: auto;
+    background-color: transparent;
+    border: none;
+    padding: 0.25rem;
+    font-size: 0.9375rem;
+}
+
+.log-entry {
+    padding: 0.75rem 1rem;
+    margin-bottom: 0.625rem;
+    border-radius: 3px;
+    border: 1px solid var(--swish-border);
+    border-left-width: 5px; /* Mantém a borda lateral colorida */
+    opacity: 0;
+    transform: translateX(-20px);
+    animation: slideInEntry 0.4s forwards ease-out;
+    transition: background-color 0.2s ease, box-shadow 0.2s ease;
+    background-color: #a8a8a845;
+    color: #a8a8a8;
+    display: flex; /* Para alinhar ícone e texto */
+    align-items: flex-start; /* Alinha ícones com a primeira linha de texto */
+}
+
+.log-entry:hover {
+    background-color: #686868;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+/* REMOVIDO: .log-entry::before e todo seu conteúdo de emojis */
+.log-entry::before {
+    content: none !important; /* Garante que nenhum emoji do CSS seja exibido */
+}
+
+/* Estilo para os ícones Font Awesome dentro dos logs */
+.log-entry i.fa-solid {
+    margin-right: 0.75em; /* Espaçamento entre o ícone e o texto */
+    font-size: 1em; /* Ajusta o tamanho do ícone em relação ao texto do log */
+    line-height: inherit; /* Para melhor alinhamento vertical com o texto */
+    width: 1.25em; /* Largura fixa para alinhar ícones de diferentes larguras */
+    text-align: center; /* Centraliza o ícone */
+    flex-shrink: 0; /* Impede que o ícone encolha */
+}
+
+/* Cores e estilos específicos por tipo de log (apenas borda e cores de ícone se necessário) */
+.log-entry.info { border-left-color: var(--swish-blue-accent); }
+.log-entry.info i.fa-solid { color: var(--swish-blue-accent); }
+
+.log-entry.error { border-left-color: var(--swish-red-accent); background-color: #FEE2E2; color: #991B1B;}
+.log-entry.error i.fa-solid { color: var(--swish-red-accent); }
+
+.log-entry.call { border-left-color: var(--swish-blue-accent); }
+.log-entry.call i.fa-solid { color: var(--swish-blue-accent); }
+
+.log-entry.base-case { border-left-color: var(--swish-green-accent); }
+.log-entry.base-case i.fa-solid { color: var(--swish-green-accent); }
+
+.log-entry.recursive-step { border-left-color: var(--swish-orange-accent); }
+.log-entry.recursive-step i.fa-solid { color: var(--swish-orange-accent); }
+
+.log-entry.return { border-left-color: var(--swish-purple-mid); }
+.log-entry.return i.fa-solid { color: var(--swish-purple-mid); }
+
+.log-entry.calculation { border-left-color: var(--swish-text-subtle); }
+.log-entry.calculation i.fa-solid { color: var(--swish-text-subtle); }
+
+.log-entry.check { border-left-color: var(--swish-text-subtle); }
+.log-entry.check i.fa-solid { color: var(--swish-text-subtle); }
+
+.log-entry.final { border-left-color: var(--swish-green-accent); font-weight: 500; background-color: #D1FAE5; color: #333; }
+.log-entry.final i.fa-solid { color: var(--swish-green-accent); }
+
+
+.log-entry strong { color: #a8a8a8; font-weight: 500; }
+
+/* Seção de Resultado */
+#result-section {
+    background-color: var(--swish-purple-dark);
+    border: none;
+    color: var(--swish-text-light);
+    text-align: center;
+}
+#result-section h3 {
+    color: var(--swish-text-light);
+    opacity: 0.8;
+    font-weight: 500;
+}
+#result-section p#final-result {
+    font-family: var(--swish-font-heading);
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--swish-yellow-accent);
+    padding: 0.5rem 0;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    margin-top: auto;
+    padding: 1.5rem;
+    background-color: #212121;
+    color: var(--swish-text-subtle);
+    font-size: 0.875rem;
+}
+footer p {
+    color: #9CA3AF;
+    opacity: 0.8;
+}
+
+/* Animações */
+@keyframes slideInEntry {
+    from { opacity: 0; transform: translateX(-20px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes stackPush {
+    from { opacity: 0; transform: translateY(20px) scale(0.95); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* Barras de Scroll Personalizadas */
+::-webkit-scrollbar {
+    width: 14px;
+    height: 14px;
+}
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+::-webkit-scrollbar-thumb {
+    background-color: rgba(125, 60, 255, 0.3);
+    border-radius: 10px;
+    border: 3px solid transparent;
+    background-clip: content-box;
+}
+::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(125, 60, 255, 0.5);
+}
+::-webkit-scrollbar-corner {
+    background: transparent;
+}
+* {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(125, 60, 255, 0.5) transparent;
+}
+/* Área da Pilha de Chamadas (Call Stack) */
+#call-stack-list {
+    flex-grow: 1;
+    min-height: 250px;
+    max-height: 450px;
+    overflow-y: auto;
+    background-color: transparent;
+    border: none;
+    padding: 0.25rem;
+    list-style-type: none;
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.call-stack-item {
+    background-color: #F9FAFB;
+    border: 1px solid var(--swish-border);
+    padding: 0.875rem 1.25rem; /* 14px 20px */
+    margin-bottom: 0.625rem; /* 10px */
+    border-radius: 3px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+    transition: all 0.3s ease-out;
+    opacity: 0;
+}
+.call-stack-item.entering {
+    animation: stackPush 0.4s forwards ease-out;
+    border-left: 5px solid var(--swish-blue-accent);
+}
+.call-stack-item.returning {
+    opacity: 0.7;
+    border-left: 5px solid var(--swish-orange-accent);
+    background-color: #FFF7ED;
+}
+.call-stack-item.active {
+    border-color: var(--swish-purple-mid);
+    box-shadow: 0 0 0 3px rgba(125, 60, 255, 0.15), var(--swish-shadow);
+    background-color: var(--swish-bg-card);
+    border-left-width: 5px;
+    border-left-color: var(--swish-purple-dark);
+}
+
+.call-stack-item .function-name {
+    font-weight: 600;
+    font-family: var(--swish-font-heading);
+    color: var(--swish-purple-dark);
+}
+.call-stack-item .params {
+    font-size: 0.875rem; /* 14px */
+    color: #212121 ;
+}
+.call-stack-item .status {
+    font-size: 0.8125rem; /* 13px */
+    font-style: italic;
+    color: var(--swish-purple-mid);
+    display: block;
+    margin-top: 0.25rem; /* 4px */
+}
+.call-stack-item.returning .status {
+    color: var(--swish-orange-accent);
+}

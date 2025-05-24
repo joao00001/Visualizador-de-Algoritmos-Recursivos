@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visualizador de Recursão</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Roboto:wght@400;500&family=Fira+Code&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="site.css">
+</head>
+<body>
+    <header>
+        <h1>🌀 Visualizador de Algoritmos Recursivos 🌀</h1>
+    </header>
+
+    <main>
+        <section id="config-section">
+            <h2>Escolha o Algoritmo e Configure</h2>
+            <select id="algorithm-select">
+                    <option value="factorial">Fatorial</option>
+                    <option value="fibonacci">Fibonacci</option>
+                    <option value="bubbleSort">Bubble Sort (Recursivo)</option> 
+                    <option value="mergeSort">Merge Sort</option> 
+                    <option value="quickSort">Quick Sort</option> 
+                </select>
+            <div class="control-group" id="algorithm-input-group">
+                <label for="algorithm-input" id="algorithm-input-label">Entrada:</label>
+                <input type="text" id="algorithm-input" value="5,2,8,1,7,4"> 
+                <small id="input-hint">Para Fatorial/Fibonacci: um número. Para Ordenação: números separados por vírgula (ex: 5,2,8,1).</small> 
+            </div>
+            <button id="visualize-btn">Visualizar Execução</button>
+        </section>
+
+        <section id="visualization-section">
+            <div class="column" id="explanation-area">
+                <h3>Passo a Passo da Execução</h3>
+                <div id="steps-log">
+                </div>
+            </div>
+            <div class="column" id="callstack-area">
+                <h3>Pilha de Chamadas (Call Stack)</h3>
+                <ul id="call-stack-list">
+                </ul>
+            </div>
+        </section>
+
+        <section id="full-code-display-section">
+            <h3>Código Completo do Algoritmo (<span id="code-section-algorithm-name">Fatorial</span>)</h3>
+            <div id="page-code-display-wrapper">
+                <div id="page-line-numbers"></div>
+                <pre id="page-code-display"><code></code></pre>
+            </div>
+        </section>
+
+        <section id="result-section">
+            <h3>Resultado Final:</h3>
+            <p id="final-result">---</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>Um exemplo simples para demonstrar a visualização de recursão.</p>
+    </footer>
+
+    <script src="site.js"></script>
+</body>
+</html>
