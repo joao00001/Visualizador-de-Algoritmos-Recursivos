@@ -1,8 +1,8 @@
-#Visualizador de Algoritmos Recursivos 
+# Visualizador de Algoritmos Recursivos 
 
 Este projeto é um site interativo focado em demonstrar visualmente como funcionam algoritmos de recursão e algoritmos de ordenação. O objetivo é auxiliar no aprendizado e na compreensão desses conceitos fundamentais da ciência da computação através de animações textuais do fluxo de execução, da pilha de chamadas e das transformações de dados.
 
-##Funcionalidades
+## Funcionalidades
 
 * **Visualização Passo a Passo:** Acompanhe cada etapa da execução do algoritmo.
 * **Pilha de Chamadas (Call Stack) Dinâmica:** Observe como as funções são empilhadas e desempilhadas durante a recursão.
@@ -14,7 +14,7 @@ Este projeto é um site interativo focado em demonstrar visualmente como funcion
 * **Design Moderno e Responsivo:** Interface inspirada no design "Swish", com foco na clareza e usabilidade.
 * **Ícones:** Utiliza Font Awesome para ícones informativos nos logs.
 
-##Tecnologias Utilizadas
+## Tecnologias Utilizadas
 
 * **HTML5:** Para a estrutura semântica do site.
 * **CSS3:** Para estilização, layout (Flexbox, Grid) e animações, seguindo uma paleta de cores e design inspirados no tema "Swish".
@@ -47,7 +47,7 @@ Este projeto é um site interativo focado em demonstrar visualmente como funcion
         * A seção "Código Completo do Algoritmo" destacará (de forma simples) as linhas relevantes.
         * O "Resultado Final" será exibido ao término da execução.
 
-##Algoritmos Implementados
+## Algoritmos Implementados
 
 Atualmente, o visualizador suporta os seguintes algoritmos:
 
@@ -59,7 +59,7 @@ Atualmente, o visualizador suporta os seguintes algoritmos:
     * Merge Sort
     * Quick Sort
 
-##Estrutura do Código
+## Estrutura do Código
 
 * **`site.html`**: Contém a estrutura principal da página, incluindo os elementos de interface para seleção de algoritmos, entrada de dados, e as áreas de visualização.
 * **`site.css`**: Responsável por toda a estilização visual do site, incluindo o design "Swish", responsividade básica, e animações de UI.
@@ -69,7 +69,7 @@ Atualmente, o visualizador suporta os seguintes algoritmos:
     * Funções de visualização (`visualizeFactorial`, `visualizeFibonacci`, `visualizeMergeSort`, etc.) que controlam a execução passo a passo, atualizam os logs, a pilha de chamadas e o destaque do código.
     * Funções auxiliares como `addStepLog`, `updateCallStack`, `displayCode`, `tokenizeLine`.
 
-##Possíveis Melhorias Futuras
+## Possíveis Melhorias Futuras
 
 * Adicionar mais algoritmos recursivos (ex: Torre de Hanói, Busca Binária recursiva).
 * Adicionar mais algoritmos de ordenação.
